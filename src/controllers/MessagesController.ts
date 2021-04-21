@@ -22,6 +22,16 @@ class MessagesController {
       });
     }
   }
+
+  async showByUser(request: Request, response: Response) {
+    const { user_id } = request.params;
+
+    const messagesService = new MessagesService();
+
+    const list = await messagesService.listByUser(user_id);
+
+    return response.json(list);
+  }
 }
 
 export { MessagesController }
