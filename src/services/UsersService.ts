@@ -11,7 +11,7 @@ class UsersService {
     const usersRepository = getCustomRepository(UsersRepository);
 
     const userExists = await usersRepository.findOne({
-      email
+      email,
     });
 
     if (userExists) {
@@ -19,7 +19,7 @@ class UsersService {
     }
 
     const user = usersRepository.create({
-      email
+      email,
     });
 
     await usersRepository.save(user);
