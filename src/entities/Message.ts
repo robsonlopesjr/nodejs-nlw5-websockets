@@ -18,12 +18,12 @@ class Message {
   @Column()
   admin_id: string;
 
-  @JoinColumn({ name: 'user_id' })
-  @ManyToOne(() => User)
-  user: User;
-
   @Column()
   user_id: string;
+
+  @ManyToOne(() => User)
+  @JoinColumn({ name: 'user_id' })
+  user: User;
 
   @Column()
   text_id: string;
