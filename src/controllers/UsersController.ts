@@ -9,7 +9,7 @@ class UsersController {
     try {
       const usersService = new UsersService();
 
-      const user = await usersService.create({ email });
+      const user = await usersService.create(email);
 
       return response.json(user);
     } catch (err) {
